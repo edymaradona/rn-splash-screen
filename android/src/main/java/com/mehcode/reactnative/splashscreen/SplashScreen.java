@@ -2,7 +2,6 @@ package com.mehcode.reactnative.splashscreen;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.support.annotation.StyleRes;
 
 import java.lang.ref.WeakReference;
 
@@ -13,7 +12,7 @@ public class SplashScreen {
     /**
      * Show the splash screen.
      */
-    public static void show(final Activity activity, final @StyleRes int styleId) {
+    public static void show(final Activity activity) {
         if (activity == null) return;
 
         // Store weak-reference to showing activity (in case we try to hide too early)
@@ -24,7 +23,7 @@ public class SplashScreen {
             @Override
             public void run() {
                 if (!activity.isFinishing()) {
-                    mSplashDialog = new Dialog(activity, styleId);
+                    mSplashDialog = new Dialog(activity, R.style.RNSplashScreen_SplashTheme);
                     mSplashDialog.setCancelable(false);
                     
                     if (!mSplashDialog.isShowing()) {

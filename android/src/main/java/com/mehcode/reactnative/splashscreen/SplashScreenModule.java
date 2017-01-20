@@ -15,6 +15,14 @@ class SplashScreenModule extends ReactContextBaseJavaModule {
     }
 
     /**
+     * Show the splash screen.
+     */
+    @ReactMethod
+    public void show() {
+        SplashScreen.show(getCurrentActivity());
+    }
+
+    /**
      * Close the active splash screen.
      */
     @ReactMethod
